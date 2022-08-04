@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h3>Complete todos los campos como se solicita</h3>
+  <form th:action="@{/insertarFutbolista}" th:object="${futbolista}" method="post">
+      <p>
+          <label for="nombre">Nombre</label>
+          <input type="text" th:field="*{nombre}" id="nombre">
+      </p>
+
+      <p>
+          <label for="apellido1">Primer apellido</label>
+          <input type="text" th:field="*{apellido1}" id="apellido1">
+      </p>
+
+      <p>
+          <label for="apellido2">Segundo apellido</label>
+          <input type="text" th:field="*{apellido2}" id="apellido2">
+      </p>
+
+      <p>
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input type="date" th:field="*{nacimiento}" id="nacimiento">
+      </p>
+
+      <p>
+          <p><label>Posicion</label></p>
+          <p>
+              <input id="cbox1" type="checkbox" value="Portero" th:field="*{posicion}" >
+              <label for="cbox1">Portero</label>
+              <input id="cbox2" type="checkbox" value="Defensa" th:field="*{posicion}" >
+              <label for="cbox2">Defensa</label>
+              <input id="cbox3" type="checkbox" value="Delantero" th:field="*{posicion}" >
+              <label for="cbox3">Delantero</label>
+              <input id="cbox4" type="checkbox" value="Mediocampista" th:field="*{posicion}" >
+              <label for="cbox4">Mediocampista</label>
+          </p>
+      </p>
+
+      <p>
+          <label for="estatura">Estatura en metros</label>
+          <input type="text" th:field="*{estatura}" id="estatura">
+      </p>
+
+      <p>
+          <label for="peso">Peso</label>
+          <input type="text" th:field="*{peso}" id="peso">
+      </p>
+
+      <p>
+          <p><label>Rama</label></p>
+          <p>
+          <input id="Mcbox" type="checkbox" value="M" th:field="*{rama}">
+              <label for="Mcbox">Masculino</label>
+          <input id="Fcbox" type="checkbox" value="F" th:field="*{rama}">
+              <label for="Fcbox">Femenino</label>
+          </p>
+      </p>
+
+      <p>
+          <label for="telefono">Telefono</label>
+          <input type="text" th:field="*{telefono}" id="telefono">
+      </p>
+
+      <p>
+          <label for="direccion">direccion</label>
+          <textarea type="textB" th:field="*{direccion}" id="direccion"></textarea>
+      </p>
+
+      <input type="submit" value="Registrar">
+  </form>
+</body>
+</html>

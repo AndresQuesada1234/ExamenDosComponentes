@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Ingrese el nombre o apellido que desea buscar</h3>
+    <form th:action="@{/insertarFutbolista}" th:object="${futbolista}" method="post">
+      <p>
+        <input type="text" th:field="*{nombre || apellido1}">
+      </p>
+      <input type="submit" value="Buscar">
+    </form>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Primer apellido</th>
+        <th>Segundo apellido</th>
+        <th>Detalles</th>
+      </tr>
+      <tr th:each="entry : ${futbolista}">
+        <td th:text="${entry.nombre}"></td>
+        <td th:text="${entry.apellido1}"></td>
+        <td th:text="${entry.apellido2}"></td>
+      </tr>
+    </table>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
+</body>
+</html>
