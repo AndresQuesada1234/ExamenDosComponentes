@@ -38,7 +38,7 @@ public class FutbolistaController {
         return "listarFutbolistas";
     }
 
-    @PostMapping(value = "/buscar")
+    @GetMapping(value = "/buscar")
     public String buscarFutbolista(Model model, String valor){
         model.addAttribute("futbolista", futbolistaService.find(valor));
         return "buscarFutbolista";
